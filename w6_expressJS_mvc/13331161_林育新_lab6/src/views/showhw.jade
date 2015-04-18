@@ -1,0 +1,22 @@
+extends baseteacher
+
+block content-right
+    .showhw
+      .page-header
+        h1
+          | 软件过程改进
+      table.table.table-bordered
+        tr
+          th.col-md-2 作业名
+          th.col-md-2 发布者
+          th.col-md-4 要求
+          th.col-md-3 截止日期
+          th.col-md-2 操作
+        each course in hw
+          tr
+            td.changetdfont #{course.hwname}
+            td.changetdfont #{course.createby}
+            td.changetdfont #{course.command}
+            td.changetdfont.highlight #{course.ddl}
+            td
+              a.btn.btn-primary(role="button" href="/modify/#{course._id}") 修改
